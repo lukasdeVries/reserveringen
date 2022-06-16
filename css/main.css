@@ -1,65 +1,94 @@
 /* taks/login.php */
 
 .form-inloggen {
-    background-color: white;
-  }
-  
-  .error {
+background-color: white;
+}
+
+.error {
+display: flex;
+justify-content: center;
+color: red;
+}
+
+.card{
+padding: 25px;
+background-color: white;
+border-radius: 10px;
+box-shadow: 5px 5px 25px black;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.form-inloggen input[type="text"], .form-inloggen input[type="password"]{
+margin-bottom: 10px;
+background-color: white;
+border: 1px solid grey;
+border-radius: 10px;
+padding: 10px;
+}
+
+.form-inloggen input[type='submit']{
+width: 200px;
+background: #00bcd4;
+color: #fff;
+border: none;
+cursor: pointer;
+padding: 10px;
+margin: 10px;
+font-size: 20px;
+border-radius: 5px;
+}
+
+.form-inloggen input[type='submit']:hover{
+width: 200px;
+background: #00bcd4;
+color: #fff;
+border: none;
+cursor: pointer;
+padding: 10px;
+font-size: 20px;
+border-radius: 5px;
+box-shadow: 20px 20px 50px grey;
+}
+
+.container-body {
+height: 100%;
+}
+
+.inloggen {
+display: flex;
+justify-content: center;
+height: 100%;
+align-items: center;
+}
+
+/* main index----------------- */
+.wrapper{
+    margin: 0 auto;
+    width: 70%;
+}
+header{
+    height: 10%;
+
+}
+.page-top{
     display: flex;
-    justify-content: center;
-    color: red;
-  }
-  
-  .card{
+    justify-content: space-between;
+    align-items: center;
     padding: 25px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 5px 5px 25px black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+}
+body img{
+    width: 100%;
+    height: auto;
+
+}
+.forrest-image{
+    background-image: url('../img/forrest.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
   
-  .form-inloggen input[type="text"], .form-inloggen input[type="password"]{
-    margin-bottom: 10px;
-    background-color: white;
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  
-  .form-inloggen input[type='submit']{
-    width: 200px;
-    background: #00bcd4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    margin: 10px;
-    font-size: 20px;
-    border-radius: 5px;
-  }
-  
-  .form-inloggen input[type='submit']:hover{
-    width: 200px;
-    background: #00bcd4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 5px;
-    box-shadow: 20px 20px 50px grey;
-  }
-  
-  .container-body {
-    height: 100%;
-  }
-  
-  .inloggen {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-  }
+}
