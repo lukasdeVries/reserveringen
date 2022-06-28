@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Tabelstructuur voor tabel `huizen`
 --
 
+CREATE DATABASE IF NOT EXISTS `snelkookpan`;
+
+USE `snelkookpan`;
+
 CREATE TABLE `huizen` (
   `id` int(11) NOT NULL,
   `plaats` varchar(50) NOT NULL,
