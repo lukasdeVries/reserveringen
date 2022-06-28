@@ -12,6 +12,56 @@
         <?php require_once "header.php" ?>
     </div>
     <div class="forrest-image"></div>
+    <div class="wrapper main-index">
+        <div class="filter-column">
+            <form action="backend/filterController.php" method="post">
+                <div class="form-item">
+                    <label for="location">Locatie</label>
+                    <select name="location" id="location">
+                        <option value="Zwolle">Zwolle</option>
+                        <option value="Breda">Breda</option>
+                        <option value="Utrecht">Utrecht</option>
+                        <option value="Enschede">Enschede</option>s
+                    </select>
+                </div><!--form-item-->
+                <div class="form-item">
+                    <label for="dateFrom">Datum vanaf</label>
+                    <input type="date" name="dateFrom">
+                </div><!--form-item-->
+                <div class="form-item">
+                    <label for="dateTo">Datum tot</label>
+                    <input type="date" name="dateTo">
+                </div><!--form-item-->
+                <div class="form-item">
+                    <label for="price">Prijs</label>
+                    <input type="number" name="price" step="any"> 
+                </div><!--form-item-->
+                <div class="form-submit">
+                    <input type="submit" value="Toon resultaten">
+                </div>
+            </form>
+        </div><!--filter-column-->
+        <div class="reservation-listing">
+            <?php
+            require_once "backend/conn.php";
+            
+            $query = "SELECT * FROM huizen";
+            $statement = $conn->prepare($query);
+            $statement->execute();
+            $huizen = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+            foreach($huizen as $huis):
+
+            ?>
+            <div class="huis">
+                <img src="<?php echo $huis['afbeelding'];?>" alt="huis">
+                <p><?php echo $huis['plaats'];?></p>
+            </div><!--huis-->
+            <?php endforeach; ?>
+        </div>
+        <div class="adColumn">
+
+        </div><!--adColumn-->
+    </div><!--wrapper-->
 </body>
 </html>

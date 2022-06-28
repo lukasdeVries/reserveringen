@@ -1,3 +1,7 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 /* taks/login.php */
 
 .form-inloggen {
@@ -69,20 +73,20 @@ align-items: center;
     margin: 0 auto;
     width: 70%;
 }
-header{
-    height: 10%;
-
-}
 .page-top{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
 }
 body img{
     width: 100%;
     height: auto;
 
+}
+body .wrapper{
+    display: flex;
+    flex-direction: row;
 }
 .forrest-image{
     background-image: url('../img/forrest.jpg');
@@ -91,4 +95,26 @@ body img{
     background-position: center;
     height: 300px;
   
+}
+.filter-column{
+    width: 15vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+.filter-column form{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+.form-item{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.form-item input{
+    height: 18px;
+}
+.reservation-listing{
+    height: 100px;
 }
