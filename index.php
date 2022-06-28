@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="header-wrapper">
         <?php require_once "header.php" ?>
     </div>
     <div class="forrest-image"></div>
-    <div class="wrapper main-index">
+    <div class="wrapper">
         <div class="filter-column">
             <form action="backend/filterController.php" method="post">
                 <div class="form-item">
@@ -55,10 +55,15 @@
             ?>
             <div class="huis">
                 <img src="<?php echo $huis['afbeelding'];?>" alt="huis">
-                <p><?php echo $huis['plaats'];?></p>
+                <div class="info">
+                    <p><?php echo $huis['plaats']," ", $huis['straat'], " ", $huis['huisnummer'];?></p>
+                </div>
+                <div class="buttons">
+                    <a href="reservering.php?id=:<?php echo $huis['id']?>">reserveren</a>
+                </div>
             </div><!--huis-->
             <?php endforeach; ?>
-        </div>
+        </div><!--reservation-listing-->
         <div class="adColumn">
 
         </div><!--adColumn-->
