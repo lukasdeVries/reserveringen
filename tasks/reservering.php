@@ -16,23 +16,64 @@
         <div class="reserveringen">
             <?php
                 $id = $_GET['id'];
+
+                require_once '../backend/conn.php';
+
+
+                $query = "SELECT * FROM huizen WHERE id= :id";
+                $statement = $conn->prepare($query);
+                $statement->execute([
+                    ":id" => $id,
+                ]);
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+                if (empty($result)) {
+                    ?>
+                        <div class="errorCenter">
+                            <div class="error">
+                                <p> Huis met id: <?php echo $id ?> bestaat niet </p>
+                            </div>
+                        </div>
+                    <?php
+                    die;
+                } else {
+
             ?>
+
             <div class="container-form">
-                <form action="../backend/reserveringenController" method="post">
-                    <div class="container-form-group">
-                        <label for="straat"> Straat </label>
-                        <input type="text" value=<?php echo $id?>> 
-                    </div>
-                    <div class="container-form-group">
-                        <label for="straat"> Straat </label>
-                        <input type="text" value=<?php echo $id?>> 
-                    </div>
-                    <div class="container-form-group">
-                        <label for="straat"> Straat </label>
-                        <input type="text" value=<?php echo $id?>> 
-                    </div>
-                </form>
+                <div class="form">
+                    <h1 class="reserveringTitel">Reserveren</h1>
+                    <form action="../backend/reserveringenController.php" method="POST">
+                        <div class="form-group">
+                            <label for="straat"> Straat: </label>
+                            <input type="text" value=<?php echo $result['straat'] ?> name="straat">
+                        </div>
+                        <div class="form-group">
+                            <label for="straat"> Huisnummer: </label>
+                            <input type="text" value=<?php echo $result['huisnummer'] ?> name="huisnummer">
+                        </div>
+                        <div class="form-group">
+                            <label for="straat"> Postcode: </label>
+                            <input type="text" value=<?php echo $result['postcode'] ?> name="postcode">
+                        </div>
+                        <div class="form-group">
+                            <label for="straat"> Stad: </label>
+                            <input type="text" value=<?php echo $result['plaats'] ?> name="plaats">
+                        </div>
+                        <div class="form-group">
+                            <label for="vanaf"> Vanaf: </label>
+                            <input type="date" value="" name="vanaf">
+                        </div>
+                        <div class="form-group">
+                            <label for="tot"> Tot: </label>
+                            <input type="date" value="" name="tot">
+                        </div>
+                    </form>
+                </div>
             </div>
+
+            <?php } ?>
+
         </div>
     </div>
 
