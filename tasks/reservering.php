@@ -62,11 +62,11 @@
                         </div>
                         <div class="form-group">
                             <label for="vanaf"> Vanaf: </label>
-                            <input type="date" value="" name="vanaf">
+                            <input type="date" name="vanaf">
                         </div>
                         <div class="form-group">
                             <label for="tot"> Tot: </label>
-                            <input type="date" value="" name="tot">
+                            <input type="date" name="tot">
                         </div>
                         <div class="form-submit">
                             <input type="submit" value="Reserveren">
