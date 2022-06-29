@@ -68,6 +68,9 @@
                             <label for="tot"> Tot: </label>
                             <input type="date" value="" name="tot">
                         </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Reserveren">
+                        </div>
                     </form>
                 </div>
             </div>
