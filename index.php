@@ -59,7 +59,7 @@
                     <p><?php echo $huis['plaats']," ", $huis['straat'], " ", $huis['huisnummer'];?></p>
                 </div>
                 <div class="buttons">
-                    <a href="reservering.php?id=:<?php echo $huis['id']?>">reserveren</a>
+                    <a href="tasks/reservering.php?id=<?php echo $huis['id']?>">reserveren</a>
                 </div>
             </div><!--huis-->
             <?php endforeach; ?>
