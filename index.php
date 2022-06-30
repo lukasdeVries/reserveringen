@@ -61,8 +61,8 @@
                     <p>capaciteit: <?php echo $huis['capaciteit']?></p>
                 </div>
                 <div class="buttons">
-                    <a href="reservering.php?id=:<?php echo $huis['id']?>">reserveren</a>
-                </div><!--buttons-->
+                    <a href="tasks/reservering.php?id=<?php echo $huis['id']?>">reserveren</a>
+                </div>
             </div><!--huis-->
             <?php endforeach; ?>
         </div><!--reservation-listing-->

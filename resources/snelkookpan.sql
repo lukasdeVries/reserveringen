@@ -41,6 +41,14 @@ CREATE TABLE `huizen` (
   `afbeelding` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `reserveringen` (
+  `id` int(11) NOT NULL,
+  `huis` int(11) NOT NULL,
+  `datumvan` date NOT NULL,
+  `datumtot` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
 --
 -- Gegevens worden geëxporteerd voor tabel `huizen`
 --
@@ -58,6 +66,10 @@ INSERT INTO `huizen` (`id`, `plaats`, `prijs`, `straat`, `huisnummer`, `postcode
 ALTER TABLE `huizen`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `reserveringen`
+  ADD PRIMARY KEY (`id`);
+
+
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
@@ -69,6 +81,11 @@ ALTER TABLE `huizen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
+ALTER TABLE `reserveringen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
