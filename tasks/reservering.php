@@ -44,6 +44,8 @@
                 <div class="form">
                     <h1 class="reserveringTitel">Reserveren</h1>
                     <form action="../backend/reserveringenController.php" method="POST">
+                        <input type="hidden" name="action" value="reserveren">
+                        <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <div class="form-group">
                             <label for="straat"> Straat: </label>
                             <input type="text" value=<?php echo $result['straat'] ?> name="straat">
