@@ -45,7 +45,7 @@ CREATE TABLE `reserveringen` (
   `id` int(11) NOT NULL,
   `huis` int(11) NOT NULL,
   `datumvan` date NOT NULL,
-  `datomtot` date NOT NULL
+  `datumtot` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
