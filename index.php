@@ -42,7 +42,7 @@
             </form>
         </div><!--filter-column-->
         <div class="reservation-listing">
-            <?php
+        <?php
             require_once "backend/conn.php";
             
             $query = "SELECT * FROM huizen";
@@ -57,10 +57,12 @@
                 <img src="<?php echo $huis['afbeelding'];?>" alt="huis">
                 <div class="info">
                     <p><?php echo $huis['plaats']," ", $huis['straat'], " ", $huis['huisnummer'];?></p>
+                    <p><?php echo "&euro;", $huis['prijs'],",- per nacht"?></p>
+                    <p>capaciteit: <?php echo $huis['capaciteit']?></p>
                 </div>
                 <div class="buttons">
                     <a href="reservering.php?id=:<?php echo $huis['id']?>">reserveren</a>
-                </div>
+                </div><!--buttons-->
             </div><!--huis-->
             <?php endforeach; ?>
         </div><!--reservation-listing-->
